@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="mmt_testNG.mmt_testNG">
+        <methods>
+          <include name="cfilter"/>
+          <include name="dinsure"/>
+          <include name="eaddadult"/>
+          <include name="alogin"/>
+          <include name="bsearch"/>
+          <include name="browser"/>
+        </methods>
+      </class> <!-- mmt_testNG.mmt_testNG -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
