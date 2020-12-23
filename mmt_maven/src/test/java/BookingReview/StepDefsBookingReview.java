@@ -1,8 +1,14 @@
 package BookingReview;
 
+import java.awt.Desktop.Action;
+import java.awt.Window;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -16,7 +22,7 @@ public class StepDefsBookingReview {
 		// Write code here that turns the phrase above into concrete actions
 		System.setProperty("webdriver.chrome.driver", "C:\\automation testing drivers\\chromedriver.exe");
 		driver = new ChromeDriver();
-		driver.get("https://www.makemytrip.com/flight/review/?itineraryId=f3d6ea133f750326261bdd6038249243a3f3e1e0&rKey=RKEY:5c9cb4e4-44dd-40dd-84b0-69a9e80f4836:19_0&crId=e048b230-5393-4118-b1cf-b286bcf81732&cur=INR&openFF=undefined&xflt=eyJjIjoiRSIsInAiOiJBLTFfQy0wX0ktMCIsInQiOiIiLCJzIjoiSVhSLUJMUi0yMDIwMTIzMCJ9&ccde=IN");
+		driver.get("https://www.makemytrip.com/flight/review/?itineraryId=bd18018b5d73425abef0159c09b978cbcd34a812&rKey=RKEY:6e91e010-8d40-444f-9afe-c9704aa62041:19_0&crId=b6d5fd0c-9daf-47a3-b33e-763e367edc8a&cur=INR&openFF=undefined&xflt=eyJjIjoiRSIsInAiOiJBLTFfQy0wX0ktMCIsInQiOiIiLCJzIjoiSVhSLUJMUi0yMDIwMTIzMCJ9&ccde=IN");
 		driver.manage().window().maximize();
 		//throw new io.cucumber.java.PendingException();
 	}
@@ -27,7 +33,14 @@ public class StepDefsBookingReview {
 		//Thread.sleep(5000);
 		//driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div[2]/div[1]/div[1]/div[3]/div/div[3]/label[2]/input")).click();
 		Thread.sleep(10000);
-		driver.findElement(By.xpath("//*[@id='insurance-section']//input[@value='yes']")).click();
+		WebElement securetrip = driver.findElement(By.xpath("//*[@id='insurance-section']//input[@value='no']"));
+		/*JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();",securetrip);*/
+		
+		Actions actions = new Actions(driver); 
+		actions.moveToElement(securetrip).click().build().perform();
+		
+		Thread.sleep(10000);
 		//throw new io.cucumber.java.PendingException();
 	}
 

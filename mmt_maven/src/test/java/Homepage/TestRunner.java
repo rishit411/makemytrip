@@ -1,4 +1,4 @@
-package HomePage;
+package Homepage;
 import org.junit.runner.RunWith;
 
 import io.cucumber.junit.Cucumber;
@@ -9,8 +9,8 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 */
 @RunWith(Cucumber.class)
-@CucumberOptions(plugin = {"pretty"})
+@CucumberOptions(plugin = {"pretty", "html:target/cucumber-report21"})
 
-public class RunTestHomePage {
+public class TestRunner {
 
 }

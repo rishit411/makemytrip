@@ -1,5 +1,4 @@
-#Author: Rishit
-
+#Author: your.email@your.domain.com
 #Keywords Summary :
 #Feature: List of scenarios.
 #Scenario: Business rule through list of steps with arguments.
@@ -17,81 +16,54 @@
 #""
 ## (Comments)
 #Sample Feature Definition Template
-@HomePage
-Feature: HomePage
-
-Background: User has already entered the MakeMyTrip URL
-  
-
-  @tag1
-  Scenario: mmt url validation
-  Given user enters a valid url
-  When user presses enter
-  Then mmt homepage opens
-   
-
-  @tag2
+@tag
+Feature: homepage
+  Background: User has already navigated to makemytrip
+ @Tag1
   Scenario: sign in
   Given user is on mmt homepage
-  And user has a valid Gmail/Facebook account
-  When user enters invalid username
-  And valid password
-  Then Text appears in red colour saying invalid username/password
+  When user clicks on login button
+  And user enters invalid username
+  And user clicks on next button
+  Then Text appears invalid username
   
-  @tag3
+  @Tag2
   Scenario: sign in
   Given user is on mmt homepage
-  And user has a valid Gmail/Facebook account
-  When user enters valid username
+  When user clicks on login button1
+  And user enters valid username
+  And clicks on next button1
   And invalid password
-  Then Text appears in red colour saying invalid username/password
-  
-  @tag4
-  Scenario: type of trip
-  Given user is on mmt homepage
-  And user is logged in using valid credentials
-  When user clicks on oneway radio button
-  Then the oneway radio button is checked
-  
-  @tag5
-  Scenario: type of trip
-  Given user is on mmt homepage
-  And user is logged in using valid credentials
-  When user clicks on round-trip radio button
-  Then the round-trip radio button is checked
-  
-  @tag6
-  Scenario: search results
-  Given user is on mmt homepage
-  And user is logged in using valid credentials
-  And user clicks on oneway radio button
-  When user enters source city
-  And user enters destination city
-  And user enters the departure date
-  And user clicks on search button
-  Then user is navigated to search results page
-  
-  @tag7
-  Scenario: type of trip
-  Given user is on mmt homepage
-  And user is logged in using valid credentials
-  When user clicks on round-trip radio button
-  Then the round-trip radio button is checked
-  
-  @tag8
-  
-  Scenario: search results
-  Given user is on mmt homepage
-  And user is logged in using valid credentials
-  And user clicks on round-trip radio button
-  When user enters source city
-  And user enters destination city
-  And user enters the departure date
-  And user enters the arrival date
-  And user clicks on search button
-  Then user is navigated to search results page
+  And user clicks on signin1
+  Then text appears invalid password
 
-    Examples: 
-      | name  | value | status  |
-      | name1 |     5 | success |
-      | name2 |     7 | Fail    |
+	@Tag3
+  Scenario: sign in
+  Given user is on mmt homepage
+  When user clicks on login button2
+  And user enters valid username1
+  And clicks on next button2
+  And valid password1
+  And clicks on signin2
+  Then Successful login
+  
+  
+  @Tag4
+  Scenario: search results
+  Given user is on mmt homepage
+  When user clicks on oneway
+  And user enters source city
+  And user enters destination city
+  And user enters departure date and clicks on search button
+  Then user is navigated to search results page
+  
+
+	@Tag5
+  Scenario: search results
+  Given user is on mmt homepage
+  When  user clicks on roundtrip
+  And   user enters source city1
+  And   user enters destination city1
+  And   user enters departure date
+  And   user enters arrival date and clicks on search button
+  Then  user is navigated to search results page1

@@ -17,7 +17,7 @@ public class StepDefsBookingSummary {
 		// Write code here that turns the phrase above into concrete actions
 		System.setProperty("webdriver.chrome.driver", "C:\\automation testing drivers\\chromedriver.exe");
 		driver = new ChromeDriver();
-		driver.get("https://www.makemytrip.com/flight/traveller/?itineraryId=f3d6ea133f750326261bdd6038249243a3f3e1e0&crId=e048b230-5393-4118-b1cf-b286bcf81732&cur=INR");
+		driver.get("https://www.makemytrip.com/flight/traveller/?itineraryId=f67983c6dbbafed6e3c475951717a6034857387b&crId=a05d3f7d-3bff-45f3-b129-55283453f2d9&cur=INR");
 		driver.manage().window().maximize();
 		//throw new io.cucumber.java.PendingException();
 	}
